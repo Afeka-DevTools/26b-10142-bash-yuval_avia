@@ -6,7 +6,7 @@ This repository contains a collection of useful scripts written in Bash.
 ## Team Members
 
 - Full Name: avia lurie (ID: 315150516)
-- Full Name: _____________ (ID / Student #: _______)
+- Full Name: Yuval Arvili (ID: 214630089)
 
 ## Scripts
 
@@ -19,6 +19,11 @@ All scripts live in the `scripts/` directory:
 | 3 | `scripts/delete_old_files.sh` | Finds and deletes files older than X days in a given directory, after user confirmation. |
 | 4 | `scripts/word_frequency.sh` | Counts word frequency in a text file and prints it sorted in descending order. |
 | 5 | `scripts/file_extension_counter.sh` | Counts files in a directory grouped by extension and prints a clean summary. |
+| 6 | `scripts/random_password.sh` | Generates a random 10-character password (uppercase, lowercase, digits, special chars). |
+| 7 | `scripts/count_files_dirs_links.sh` | Counts regular files, directories, and symbolic links inside a given directory. |
+| 8 | `scripts/current_user_info.sh` | Displays information about the current user (username, home dir, groups, shell). |
+| 9 | `scripts/sort_file_lines.sh` | Sorts the lines of a text file alphabetically and outputs to screen or new file. |
+| 10 | `scripts/large_files_check.sh` | Finds files larger than a given size threshold inside a directory. |
 
 ## Clone the Repository
 
@@ -126,6 +131,77 @@ Example:
 
 ```bash
 ./scripts/file_extension_counter.sh ~/Downloads
+```
+
+### 6. Random Password – `random_password.sh`
+
+Generates a random 10-character password containing at least one uppercase letter, one lowercase letter, one digit, and one special character.
+
+```bash
+./scripts/random_password.sh
+```
+
+### 7. Count Files, Directories, and Symbolic Links – `count_files_dirs_links.sh`
+
+Recursively counts regular files, directories, and symbolic links inside a directory.
+
+```bash
+# With argument
+./scripts/count_files_dirs_links.sh /path/to/dir
+
+# Without argument (interactive prompt)
+./scripts/count_files_dirs_links.sh
+```
+
+Example:
+
+```bash
+./scripts/count_files_dirs_links.sh ~/Projects
+```
+
+### 8. Current User Info – `current_user_info.sh`
+
+Displays the current user's username, home directory, groups, and configured login shell.
+
+```bash
+./scripts/current_user_info.sh
+```
+
+### 9. Sort File Lines – `sort_file_lines.sh`
+
+Sorts the lines of a file alphabetically. Asks whether to print the result to screen or save it to a new file.
+
+```bash
+# With argument
+./scripts/sort_file_lines.sh /path/to/file.txt
+
+# Without argument (interactive prompt)
+./scripts/sort_file_lines.sh
+```
+
+Example:
+
+```bash
+./scripts/sort_file_lines.sh names.txt
+```
+
+### 10. Large Files Check – `large_files_check.sh`
+
+Finds files larger than a given size threshold inside a directory.
+Threshold format examples: `500K`, `10M`, `1G`.
+
+```bash
+# With arguments: directory and size threshold
+./scripts/large_files_check.sh /path/to/dir 10M
+
+# Without arguments (interactive prompt)
+./scripts/large_files_check.sh
+```
+
+Example – find files larger than 100 MB in your home directory:
+
+```bash
+./scripts/large_files_check.sh ~ 100M
 ```
 
 ## Notes
